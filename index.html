@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uttkarsh English High School | Education For All</title>
+  <meta
+    name="description"
+    content="Uttkarsh English High School & Little World Kindergarten (Est. 2006, Govt. Recognised, Malwani, Malad West, Mumbai) — Education For All from Nursery to Grade X with 100% SSC Result."
+  />
+  <meta name="theme-color" content="#0052cc" />
+  <link rel="icon" type="image/png" href="assets/images/favicon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preload" href="assets/fonts/CanvaSans.woff" as="font" type="font/woff" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Official Sticky Top Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="brand-link" data-nav="home" aria-label="Uttkarsh English High School Home">
+        <img
+          src="assets/images/canva/MAF_8O9neNM.jpg"
+          alt="Uttkarsh English High School Emblem"
+          class="brand-emblem"
+          width="54"
+          height="54"
+        />
+        <img
+          src="assets/images/canva/wordmark_header.png"
+          alt="Uttkarsh Education For All"
+          class="brand-wordmark"
+          width="124"
+          height="44"
+        />
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobile-menu-toggle"
+        aria-label="Toggle Navigation Menu"
+        aria-expanded="false"
+        aria-controls="primary-top-nav"
+      >
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="top-nav" id="primary-top-nav" aria-label="Main Menu">
+        <a href="#home" class="nav-pill active" data-nav="home" aria-current="page">Home</a>
+        <a href="#about-us" class="nav-pill" data-nav="about-us">About Us</a>
+        <a href="#inside-school" class="nav-pill" data-nav="inside-school">Inside School</a>
+        <a href="#facilities" class="nav-pill" data-nav="facilities">Facilities</a>
+        <a href="#our-supporters" class="nav-pill" data-nav="our-supporters">Our Supporters</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dynamic Page Content Container -->
+  <main class="container" id="main-content">
+    <section id="page-home" class="page-view active" data-page="home"></section>
+    <section id="page-about-us" class="page-view" data-page="about-us" hidden></section>
+    <section id="page-inside-school" class="page-view" data-page="inside-school" hidden></section>
+    <section id="page-facilities" class="page-view" data-page="facilities" hidden></section>
+    <section id="page-our-supporters" class="page-view" data-page="our-supporters" hidden></section>
+  </main>
+
+  <!-- Common Persistent Sections Across Every Page: SOCIAL MEDIA & CONTACT US -->
+  <footer class="common-bottom-wrapper">
+    <div class="container">
+      <section
+        id="common-social-mount"
+        class="arch-section-card arch-section-tinted"
+        aria-labelledby="common-social-heading"
+      ></section>
+      <section
+        id="common-contact-mount"
+        class="arch-section-card"
+        aria-labelledby="common-contact-heading"
+      ></section>
+      <div class="site-copyright">
+        <span>© 2026–2027 <strong>Uttkarsh English High School &amp; Little World Kindergarten</strong></span>
+        <span class="copy-sep">•</span>
+        <span>Education For All</span>
+        <span class="copy-sep">•</span>
+        <span>Govt. Recognised (SSC Index: 32.04.127)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Full-Resolution Photo Lightbox Modal -->
+  <div class="lightbox-backdrop" id="photo-lightbox" role="dialog" aria-modal="true" aria-label="Photo Viewer" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Photo Viewer">✕</button>
+    <img src="" alt="" class="lightbox-img" id="lightbox-image" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
