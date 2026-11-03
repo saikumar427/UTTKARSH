@@ -127,16 +127,6 @@
           playsinline
           preload="metadata"
         ></video>
-        <div class="hero-video-controls">
-          <button type="button" class="video-ctrl-pill" id="hero-sound-btn" aria-pressed="false">
-            ${UI_ICONS.soundOff}
-            <span>Enable Audio</span>
-          </button>
-          <button type="button" class="video-ctrl-pill" id="hero-play-btn" aria-pressed="true">
-            ${UI_ICONS.pause}
-            <span>Pause</span>
-          </button>
-        </div>
       </div>
 
       <div class="quick-stats-bar">${statsHtml}</div>
@@ -155,35 +145,6 @@
         <div class="testimonials-grid">${testimonialsHtml}</div>
       </section>
     `;
-
-    const heroVid = container.querySelector('#home-hero-video');
-    const soundBtn = container.querySelector('#hero-sound-btn');
-    const playBtn = container.querySelector('#hero-play-btn');
-
-    if (heroVid && soundBtn && playBtn) {
-      soundBtn.addEventListener('click', () => {
-        heroVid.muted = !heroVid.muted;
-        if (!heroVid.muted && heroVid.paused) {
-          heroVid.play().catch(() => {});
-        }
-        soundBtn.innerHTML = heroVid.muted
-          ? `${UI_ICONS.soundOff}<span>Enable Audio</span>`
-          : `${UI_ICONS.soundOn}<span>Mute Audio</span>`;
-        soundBtn.setAttribute('aria-pressed', String(!heroVid.muted));
-      });
-
-      playBtn.addEventListener('click', () => {
-        if (heroVid.paused) {
-          heroVid.play().catch(() => {});
-          playBtn.innerHTML = `${UI_ICONS.pause}<span>Pause</span>`;
-          playBtn.setAttribute('aria-pressed', 'true');
-        } else {
-          heroVid.pause();
-          playBtn.innerHTML = `${UI_ICONS.play}<span>Play</span>`;
-          playBtn.setAttribute('aria-pressed', 'false');
-        }
-      });
-    }
 
     if (typeof window.initUttkarshArcade === 'function') {
       window.initUttkarshArcade();
@@ -1054,11 +1015,159 @@
   }
 
   /* =========================================================================
+     OFFICIAL AMBIENT STARLIGHT MARGINS (DECENT, CALM FLOATING STARS)
+     - Strictly ZERO circles, ZERO cards, ZERO orange hues
+     - Gentle drifting 4-point sculpted stars (✦) & 5-point stars (★)
+     ========================================================================= */
+  function initSideCelebrationEngine() {
+    const leftCanvas = document.getElementById('side-canvas-left');
+    const rightCanvas = document.getElementById('side-canvas-right');
+    if (!leftCanvas || !rightCanvas) return;
+
+    const COLORS = [
+      '#2563eb', // Uttkarsh Royal Blue
+      '#38bdf8', // Sky Cyan
+      '#8b5cf6', // Soft Violet
+      '#ec4899', // Rose Pink
+      '#6366f1'  // Soft Indigo
+    ];
+
+    function drawSculptedNorthStar(ctx, x, y, radius, rotation, color, alpha) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rotation);
+      ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
+      ctx.fillStyle = color;
+      const c = radius * 0.22;
+      ctx.beginPath();
+      ctx.moveTo(0, -radius);
+      ctx.quadraticCurveTo(c, -c, radius, 0);
+      ctx.quadraticCurveTo(c, c, 0, radius);
+      ctx.quadraticCurveTo(-c, c, -radius, 0);
+      ctx.quadraticCurveTo(-c, -c, 0, -radius);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawFivePointStar(ctx, x, y, radius, rotation, color, alpha) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rotation);
+      ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      const spikes = 5;
+      const innerRadius = radius * 0.45;
+      for (let i = 0; i < spikes * 2; i++) {
+        const r = i % 2 === 0 ? radius : innerRadius;
+        const angle = (i * Math.PI) / spikes - Math.PI / 2;
+        const px = Math.cos(angle) * r;
+        const py = Math.sin(angle) * r;
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function createStage(canvas, seedOffset) {
+      const ctx = canvas.getContext('2d');
+      let width = 160;
+      let height = 800;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        width = Math.max(60, rect.width || 160);
+        height = Math.max(400, rect.height || window.innerHeight - 100);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resize();
+
+      // Sparse, serene drifting stars (only 12 per side so it is calm and decent)
+      const stars = Array.from({ length: 12 }, (_, i) => ({
+        xRatio: 0.18 + ((i * 0.27 + seedOffset * 0.13) % 0.64),
+        y: ((i * 73 + seedOffset * 47) % height),
+        size: 5.5 + (i % 3) * 2.4,
+        vy: 0.18 + (i % 4) * 0.06,
+        swayAmp: 6 + (i % 3) * 4,
+        swaySpeed: 0.01 + (i % 3) * 0.004,
+        phase: i * 1.1 + seedOffset,
+        rot: i * 0.4,
+        vRot: (i % 2 === 0 ? 1 : -1) * 0.005,
+        isFivePoint: i % 3 === 0,
+        color: COLORS[(i + seedOffset) % COLORS.length]
+      }));
+
+      let frameCount = seedOffset * 30;
+
+      function step() {
+        ctx.clearRect(0, 0, width, height);
+        if (width < 48) return;
+        frameCount++;
+
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          s.y -= s.vy;
+          s.rot += s.vRot;
+
+          if (s.y < -20) {
+            s.y = height + 18;
+          }
+
+          const x = width * s.xRatio + Math.sin(frameCount * s.swaySpeed + s.phase) * s.swayAmp;
+          const wave = 0.5 + 0.5 * Math.sin(frameCount * 0.035 + s.phase);
+          const alpha = 0.24 + wave * 0.54;
+          const scale = 0.82 + wave * 0.28;
+
+          if (s.isFivePoint) {
+            drawFivePointStar(ctx, x, s.y, s.size * 0.82 * scale, s.rot, s.color, alpha);
+          } else {
+            drawSculptedNorthStar(ctx, x, s.y, s.size * scale, s.rot * 0.4, s.color, alpha);
+          }
+        }
+      }
+
+      return { resize, step };
+    }
+
+    const leftStage = createStage(leftCanvas, 1);
+    const rightStage = createStage(rightCanvas, 3);
+
+    leftStage.step();
+    rightStage.step();
+
+    window.addEventListener('resize', () => {
+      leftStage.resize();
+      rightStage.resize();
+      leftStage.step();
+      rightStage.step();
+    });
+
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      function loop() {
+        if (!document.hidden && window.innerWidth > 1280) {
+          leftStage.step();
+          rightStage.step();
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    }
+  }
+
+  /* =========================================================================
      INITIALIZATION
      ========================================================================= */
   function init() {
     renderCommonBottom();
     initLightbox();
+    initSideCelebrationEngine();
 
     document.addEventListener('click', (e) => {
       const navEl = e.target.closest('[data-nav]');
