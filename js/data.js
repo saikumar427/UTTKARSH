@@ -12,8 +12,9 @@ window.UTTKARSH_DATA = {
     "udiseSecondary": "27230600250",
     "grades": "Nursery, Jr. KG, Sr. KG & Grade I to Grade X",
     "address": "Gate No. 7, Malwani, Malad West, Mumbai – 400095, Maharashtra, India",
-    "phone": "+91 81046 17046",
-    "whatsappNumber": "918104617046",
+    "phone": "+91 80977 18508",
+    "whatsappNumber": "918097718508",
+    "email": "uttkarsheducationforall@gmail.com",
     "hours": "Monday – Saturday | 7:30 AM – 5:30 PM",
     "mapEmbedUrl": "https://www.google.com/maps?q=Gate+No+7+Malwani+Malad+West+Mumbai+400095&output=embed",
     "mapExternalUrl": "https://maps.google.com/?q=Gate+No+7+Malwani+Malad+West+Mumbai+400095",
@@ -148,7 +149,7 @@ window.UTTKARSH_DATA = {
           },
           {
               "q": "How can parents contact the school for admissions?",
-              "a": "Parents can contact Uttkarsh English High School at +91 81046 17046 (phone/WhatsApp), visit the school at Gate No. 7, Malwani, Malad West, Mumbai – 400095, or reach out through the school’s social media channels."
+              "a": "Parents can contact Uttkarsh English High School at +91 80977 18508 (phone/WhatsApp), visit the school at Gate No. 7, Malwani, Malad West, Mumbai – 400095, or reach out through the school’s social media channels."
           },
           {
               "q": "Which organisation manages Uttkarsh English High School?",
