@@ -460,14 +460,7 @@ button {
   opacity: 0.55;
 }
 
-.hero-video-controls {
-  position: absolute;
-  bottom: 18px;
-  right: 18px;
-  z-index: 2;
-  display: flex;
-  gap: 10px;
-}
+/* .hero-video-controls duplicate removed — overridden by display:none!important above */
 
 .video-ctrl-pill {
   display: inline-flex;

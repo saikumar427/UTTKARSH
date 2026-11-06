@@ -1241,14 +1241,18 @@
 
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReduced) {
+      let animId = null;
       function loop() {
-        if (!document.hidden && window.innerWidth > 1260) {
+        if (window.innerWidth > 1260) {
           leftStage.step();
           rightStage.step();
         }
-        requestAnimationFrame(loop);
+        animId = requestAnimationFrame(loop);
       }
-      requestAnimationFrame(loop);
+      function startLoop() { if (!animId) loop(); }
+      function stopLoop() { if (animId) { cancelAnimationFrame(animId); animId = null; } }
+      document.addEventListener('visibilitychange', function() { document.hidden ? stopLoop() : startLoop(); });
+      startLoop();
     }
   }
 
