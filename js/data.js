@@ -245,9 +245,10 @@ window.UTTKARSH_DATA = {
   "about": {
     "schoolIntroTitle": "About Uttkarsh English High School",
     "schoolIntroParagraphs": [
-      "Established in 2006 at Gate No. 7, Malwani, Malad West, Mumbai, Uttkarsh English High School—together with Little World Kindergarten—was founded on a transformative mission: \"Education For All.\" As a Government Recognised English-medium institution (SSC Index: 32.04.127), we nurture learners from Nursery, Jr. KG, and Sr. KG right up to Grade X.",
-      "Year after year, our students proudly achieve a 100% SSC Board Examination Result, reflecting rigorous academic mentoring paired with joyful, curiosity-driven learning. We bridge opportunity gaps in our community by equipping students with Digital Classrooms, a dedicated Computer Lab, Science & Natkhat STEM Robotics Labs, and daily nutritious Mid-Day Meals.",
-      "Supported by 12+ respected CSR foundations and educational partners, life at Uttkarsh extends far beyond textbooks—encompassing Football, Cricket, Carom, Chess, Kickboxing, Lego Leadership, Gender Equality workshops, field visits to MuSo, and vibrant cultural celebrations."
+      "Uttkarsh English High School was established in 2006. We were previously known as Malwani Uttkarsh Vidyalaya, a Marathi-medium school. As generations changed, we evolved too, transitioning into an English-medium school.",
+      "Since 2006, our focus has been on ensuring that our students receive a holistic education, and we continue to work towards the same goal. We believe in working alongside our students to ensure they understand the topics rather than simply memorising them for examinations.",
+      "We believe that education goes hand in hand with the overall development of students, not just academics. Hence, we provide them with additional activities such as indoor and outdoor sports, including football, our kids' favourite, cricket, which our girls love to play, and carrom and chess for students who don't enjoy outdoor sports. Yes, we are inclusive of all our kids.",
+      "As much as physical activity is important, we also provide our students with mental health education. We have a mandatory subject in which students get approximately an hour in their classrooms to use their imagination, draw and create."
     ],
     "highlights": [
       "Govt. Recognised • Est. 2006",
@@ -262,13 +263,15 @@ window.UTTKARSH_DATA = {
     "teachersTitle": "Message From Our Teachers",
     "teachersMessage": "“At Uttkarsh English High School, every classroom is a safe harbour of curiosity, kindness, and high expectations. From holding a child’s hand as they trace their first letters in Little World Kindergarten to guiding our tenth-graders toward 100% SSC success, our teachers mentor the whole child. Through science experiments, art, music, leadership circles, and sports, we strive to ensure that every learner discovers their voice, respects others equally, and steps into tomorrow with knowledge and integrity.”",
     "teachersSignature": "— The Dedicated Teaching Faculty, Uttkarsh English High School",
-    "sahilTitle": "Leadership Message From Sahil Sir",
+    "sahilTitle": "Sahil Sir, Coordinator",
     "sahilParagraphs": [
-      "“When we envisioned Uttkarsh, our dream was clear: every child in our community deserves access to modern, joyful, world-class English education without barriers.",
-      "True education does more than complete a syllabus—it ignites dignity, resilience, scientific thinking, and leadership. Watching our students code on computers, present innovative models at the Science Fair, compete fearlessly on the football and kickboxing arena, and achieve 100% SSC results fills us with immense pride.",
-      "With the unwavering trust of our parents, passionate teachers, and generous supporter organizations, we remain committed to empowering every child to dream big and lead change.”"
+      "MSc Psychological Wellbeing and Mental Health from London.",
+      "Here at Uttkarsh, we don't just give preference to academics. I strongly believe that when we create an environment where children genuinely want to come to school, feel safe, feel valued and are excited to learn, education becomes much more meaningful. Our goal is not just to help children pass examinations but to help them understand, question, explore and grow.",
+      "Beyond the classroom, I have started a free community space where children can come together after school, complete their homework, participate in activities and express themselves freely. I conduct art-therapy-based workshops where children explore and express their emotions, whether they are experiencing stress, anxiety or even moments of happiness.",
+      "The community we work in has limited access to developmental opportunities and resources, so I try to bridge that gap by providing children with whatever support and opportunities I can.",
+      "My purpose goes beyond providing children with education. I want to create an environment where every child feels that they belong, that their dreams matter and that their circumstances do not define their future. I want them to experience happiness, discover their abilities, build confidence and grow up knowing that they deserve opportunities just as much as anyone else. Ultimately, I want to give these children the space, support and opportunities to become whoever they aspire to be."
     ],
-    "sahilSignature": "— Sahil Sir, Uttkarsh English High School",
+    "sahilSignature": "— Sahil Sir, Coordinator, MSc Psychological Wellbeing and Mental Health from London. | Contact: sahilshaikh.21@yahoo.com",
     "sahilImage": "assets/images/canva/MAGtg-4MhwU.jpg",
     "campusStrip": [
       {
