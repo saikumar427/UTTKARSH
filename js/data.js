@@ -18,7 +18,143 @@ window.UTTKARSH_DATA = {
     "mapEmbedUrl": "https://www.google.com/maps?q=Gate+No+7+Malwani+Malad+West+Mumbai+400095&output=embed",
     "mapExternalUrl": "https://maps.google.com/?q=Gate+No+7+Malwani+Malad+West+Mumbai+400095",
     "logoEmblem": "assets/images/canva/MAF_8O9neNM.jpg",
-    "logoWordmark": "assets/images/canva/wordmark_header.png"
+    "logoWordmark": "assets/images/canva/wordmark_header.png",
+    "managingOrganisation": "Vande Mataram Shikshan Sanstha (VMSS)",
+    "medium": "English",
+    "board": "Maharashtra State Board (SSC)"
+  },
+  "seo": {
+      "siteUrl": "https://uttkarsheducationforall.in/",
+      "siteName": "Uttkarsh English High School",
+      "locale": "en_IN",
+      "ogImage": "assets/images/brand/og-uttkarsh-english-high-school.jpg",
+      "logo512": "assets/images/brand/uttkarsh-logo-512.jpg",
+      "description": "Uttkarsh English High School is an English-medium school located in Malwani, Malad West, Mumbai, committed to providing accessible and quality education to children in the community. The school believes in holistic child development, focusing not only on academic learning but also on sports, creativity, mental health awareness, social development and extracurricular activities.",
+      "keywords": "English Medium School in Malwani, Best School in Malwani Malad West, Schools in Malwani Mumbai, School in Malad West, Affordable Education in Malwani, Secondary School in Malwani, Education for Children in Malwani, Holistic Education in Mumbai, Sports and Extracurricular Activities in School, Student Mental Health and Wellbeing",
+      "address": {
+          "streetAddress": "Gate No. 7, Malwani",
+          "addressLocality": "Malad West, Mumbai",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400095",
+          "addressCountry": "IN"
+      },
+      "geo": {
+          "latitude": "19.1960",
+          "longitude": "72.8168"
+      },
+      "openingDays": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+      ],
+      "openingHoursStart": "07:30",
+      "openingHoursEnd": "17:30",
+      "areaServed": [
+          "Malwani",
+          "Malad West",
+          "Malad",
+          "Mumbai",
+          "Maharashtra"
+      ],
+      "sameAs": [
+          "https://www.instagram.com/uttkarsheducationforall",
+          "https://youtube.com/@uttkarsheducationforall",
+          "https://www.facebook.com/share/1Gw5dfnWg1/",
+          "https://www.linkedin.com/company/uttkarsh-english-high-school/"
+      ],
+      "pages": {
+          "home": {
+              "title": "Uttkarsh English High School – Best School in Malwani, Mumbai",
+              "description": "Uttkarsh English High School (Est. 2006) – Govt. Recognised English-medium school in Malwani, Malad West, Mumbai. Nursery to Grade X, 100% SSC Result."
+          },
+          "about-us": {
+              "title": "About Us – Uttkarsh English High School | Malwani, Mumbai",
+              "description": "Vision, mission and values of Uttkarsh English High School. Managed by VMSS. Holistic education in Malwani, Malad West, Mumbai since 2006."
+          },
+          "inside-school": {
+              "title": "Inside School – Uttkarsh English High School | Activities",
+              "description": "Inside Uttkarsh English High School – sports days, celebrations, art activities, mental health initiatives and student life in Malwani, Mumbai."
+          },
+          "facilities": {
+              "title": "Facilities – Uttkarsh English High School | Malwani",
+              "description": "Facilities at Uttkarsh English High School – classrooms, sports areas, digital learning, creative workshops in Malwani, Malad West, Mumbai."
+          },
+          "our-supporters": {
+              "title": "Our Supporters – Uttkarsh English High School | Partners",
+              "description": "NGOs, CSR organisations, donors and community partners supporting Uttkarsh English High School in Malwani, Malad West, Mumbai."
+          }
+      },
+      "keyFeatures": [
+          {
+              "title": "English-Medium Education",
+              "text": "Academic learning for students from Standards 5 to 10."
+          },
+          {
+              "title": "Holistic Development",
+              "text": "Focus on academic, personal, social and emotional development."
+          },
+          {
+              "title": "Sports & Physical Education",
+              "text": "Encouraging children to participate in sports, football and physical activities."
+          },
+          {
+              "title": "Mental Health & Wellbeing",
+              "text": "Activities promoting emotional awareness, mental wellbeing and healthy expression."
+          },
+          {
+              "title": "Art & Creative Learning",
+              "text": "Opportunities for children to explore creativity through art-based activities and workshops."
+          },
+          {
+              "title": "Gender Equality & Inclusion",
+              "text": "Initiatives that encourage equality, inclusivity and awareness."
+          },
+          {
+              "title": "Community Engagement",
+              "text": "Partnerships with NGOs, CSR organisations and community stakeholders."
+          },
+          {
+              "title": "Student Development",
+              "text": "Activities that build confidence, leadership, teamwork and communication skills."
+          }
+      ],
+      "faqs": [
+          {
+              "q": "Where is Uttkarsh English High School located?",
+              "a": "Uttkarsh English High School is located at Gate No. 7, Malwani, Malad West, Mumbai – 400095, Maharashtra, India."
+          },
+          {
+              "q": "Which standards are taught at Uttkarsh English High School?",
+              "a": "Uttkarsh English High School offers English-medium education from Nursery, Jr. KG, Sr. KG, and Grade I through Grade X (SSC Board)."
+          },
+          {
+              "q": "What makes Uttkarsh English High School different?",
+              "a": "Uttkarsh English High School focuses on holistic child development — combining academic learning with sports, creativity, mental health awareness, gender equality initiatives and community engagement programmes. The school has achieved 100% SSC Board results."
+          },
+          {
+              "q": "Does the school offer sports and extracurricular activities?",
+              "a": "Yes. The school actively encourages participation in sports including football, physical education, art-based activities, creative workshops, community engagement programmes and student development initiatives."
+          },
+          {
+              "q": "What initiatives does the school conduct for student mental health?",
+              "a": "Uttkarsh English High School conducts activities promoting emotional awareness, mental wellbeing, healthy expression, and social development as part of its holistic education approach."
+          },
+          {
+              "q": "Does the school organise art and creative learning activities?",
+              "a": "Yes. The school provides opportunities for children to explore creativity through art-based activities, workshops, cultural events, and creative learning programmes."
+          },
+          {
+              "q": "How can parents contact the school for admissions?",
+              "a": "Parents can contact Uttkarsh English High School at +91 81046 17046 (phone/WhatsApp), visit the school at Gate No. 7, Malwani, Malad West, Mumbai – 400095, or reach out through the school’s social media channels."
+          },
+          {
+              "q": "Which organisation manages Uttkarsh English High School?",
+              "a": "Uttkarsh English High School is managed by Vande Mataram Shikshan Sanstha (VMSS), a community-driven educational organisation committed to accessible and quality education."
+          }
+      ]
   },
   "nav": [
     {

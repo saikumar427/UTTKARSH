@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found – Uttkarsh English High School</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0052cc" />
+  <link rel="icon" type="image/png" href="assets/images/favicon-192.png" />
+  <script>
+    // GitHub Pages SPA redirect: redirect all 404s to index.html with the path as a hash
+    var path = window.location.pathname;
+    var hash = window.location.hash;
+    // If the path is not the root, redirect to root with hash
+    if (path && path !== '/' && path !== '/index.html') {
+      window.location.replace('/' + (hash || '#home'));
+    } else {
+      window.location.replace('/' + (hash || '#home'));
+    }
+  </script>
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; color: #1e293b; text-align: center; }
+    .wrap { max-width: 480px; padding: 32px; }
+    h1 { color: #0052cc; font-size: 1.5rem; }
+    a { color: #0052cc; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Page Not Found</h1>
+    <p>The page you are looking for does not exist.</p>
+    <p><a href="/">← Go to Uttkarsh English High School Home</a></p>
+    <p style="margin-top:24px;font-size:0.85rem;color:#64748b">
+      Uttkarsh English High School | Gate No. 7, Malwani, Malad West, Mumbai – 400095 | +91 81046 17046
+    </p>
+  </div>
+</body>
+</html>

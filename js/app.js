@@ -111,7 +111,8 @@
 
     container.innerHTML = `
       <div class="hero-video-card">
-        <div class="hero-badge-overlay">
+        <h1 class="sr-only">Uttkarsh English High School – Best English Medium School in Malwani, Malad West, Mumbai – Education For All</h1>
+      <div class="hero-badge-overlay">
           <span class="hero-badge-kicker">EST. 2006 • GOVT. RECOGNISED</span>
           <span class="hero-badge-divider" aria-hidden="true">•</span>
           <span>Uttkarsh English High School — Education For All</span>
@@ -959,6 +960,30 @@
 
     currentPage = pageId;
 
+    // === SEO: Dynamic page title, meta description, OG & Twitter tags ===
+    (function updateSEOMeta() {
+      var DATA = window.UTTKARSH_DATA;
+      if (!DATA || !DATA.seo || !DATA.seo.pages) return;
+      var pageSeo = DATA.seo.pages[pageId] || DATA.seo.pages['home'];
+      var pageUrl = DATA.seo.siteUrl + (pageId === 'home' ? '' : '#' + pageId);
+      if (pageSeo.title) document.title = pageSeo.title;
+      var updates = [
+        ['meta[name="description"]', 'content', pageSeo.description],
+        ['meta[property="og:title"]', 'content', pageSeo.title],
+        ['meta[property="og:description"]', 'content', pageSeo.description],
+        ['meta[property="og:url"]', 'content', pageUrl],
+        ['meta[name="twitter:title"]', 'content', pageSeo.title],
+        ['meta[name="twitter:description"]', 'content', pageSeo.description],
+        ['link[rel="canonical"]', 'href', pageUrl],
+        ['link[rel="alternate"]', 'href', pageUrl]
+      ];
+      updates.forEach(function(u) {
+        var el = document.querySelector(u[0]);
+        if (el && u[2]) el.setAttribute(u[1], u[2]);
+      });
+    })();
+
+
     if (opts.updateHash) {
       const targetHash = `#${pageId}`;
       if (window.location.hash !== targetHash) {
@@ -1015,9 +1040,10 @@
   }
 
   /* =========================================================================
-     OFFICIAL AMBIENT STARLIGHT MARGINS (DECENT, CALM FLOATING STARS)
-     - Strictly ZERO circles, ZERO cards, ZERO orange hues
-     - Gentle drifting 4-point sculpted stars (✦) & 5-point stars (★)
+     OFFICIAL INSTITUTIONAL CONSTELLATION & SHOOTING-STAR ENGINE
+     - Fills left & right margins with an official Royal Blue & Sky Cyan
+       Constellation Network + Sculpted 4-Point North-Stars (✦) & Shooting Stars
+     - Strictly ZERO circles, ZERO cards, ZERO orange/pink color clashes
      ========================================================================= */
   function initSideCelebrationEngine() {
     const leftCanvas = document.getElementById('side-canvas-left');
@@ -1025,11 +1051,11 @@
     if (!leftCanvas || !rightCanvas) return;
 
     const COLORS = [
-      '#2563eb', // Uttkarsh Royal Blue
-      '#38bdf8', // Sky Cyan
-      '#8b5cf6', // Soft Violet
-      '#ec4899', // Rose Pink
-      '#6366f1'  // Soft Indigo
+      '#0052cc', // Official Uttkarsh Royal
+      '#2563eb', // Brilliant Royal Blue
+      '#0284c7', // Sky Blue
+      '#38bdf8', // Ice Cyan
+      '#4338ca'  // Academic Indigo
     ];
 
     function drawSculptedNorthStar(ctx, x, y, radius, rotation, color, alpha) {
@@ -1081,53 +1107,118 @@
       function resize() {
         const rect = canvas.parentElement.getBoundingClientRect();
         width = Math.max(60, rect.width || 160);
-        height = Math.max(400, rect.height || window.innerHeight - 100);
+        height = Math.max(400, rect.height || window.innerHeight - 80);
         canvas.width = Math.floor(width * dpr);
         canvas.height = Math.floor(height * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
       resize();
 
-      // Sparse, serene drifting stars (only 12 per side so it is calm and decent)
-      const stars = Array.from({ length: 12 }, (_, i) => ({
-        xRatio: 0.18 + ((i * 0.27 + seedOffset * 0.13) % 0.64),
-        y: ((i * 73 + seedOffset * 47) % height),
-        size: 5.5 + (i % 3) * 2.4,
-        vy: 0.18 + (i % 4) * 0.06,
-        swayAmp: 6 + (i % 3) * 4,
-        swaySpeed: 0.01 + (i % 3) * 0.004,
-        phase: i * 1.1 + seedOffset,
-        rot: i * 0.4,
-        vRot: (i % 2 === 0 ? 1 : -1) * 0.005,
-        isFivePoint: i % 3 === 0,
-        color: COLORS[(i + seedOffset) % COLORS.length]
+      // 20 Constellation Star Nodes evenly distributed across the full margin height
+      const stars = Array.from({ length: 20 }, (_, i) => ({
+        xRatio: 0.14 + ((i * 0.29 + seedOffset * 0.17) % 0.72),
+        y: ((i / 20) * height + (seedOffset * 23)) % height,
+        size: 5.2 + (i % 4) * 1.9,
+        vy: 0.22 + (i % 4) * 0.07,
+        swayAmp: 8 + (i % 3) * 5,
+        swaySpeed: 0.011 + (i % 3) * 0.004,
+        phase: i * 0.95 + seedOffset,
+        rot: i * 0.35,
+        vRot: (i % 2 === 0 ? 1 : -1) * 0.004,
+        isFivePoint: i % 4 === 0,
+        color: COLORS[(i + seedOffset) % COLORS.length],
+        cx: 0,
+        cy: 0
       }));
+
+      // 2 Graceful upward Shooting-Star Light Streams per side
+      const shootingStars = [
+        { progress: 0.35, slot: 0.28, speed: 0.0045, dir: seedOffset === 1 ? 1 : -1 },
+        { progress: 0.78, slot: 0.72, speed: 0.0052, dir: seedOffset === 1 ? -1 : 1 }
+      ];
 
       let frameCount = seedOffset * 30;
 
       function step() {
         ctx.clearRect(0, 0, width, height);
-        if (width < 48) return;
+        if (width < 40) return;
         frameCount++;
 
+        // 1. Update Star Node Positions
         for (let i = 0; i < stars.length; i++) {
           const s = stars[i];
           s.y -= s.vy;
           s.rot += s.vRot;
-
-          if (s.y < -20) {
-            s.y = height + 18;
+          if (s.y < -15) {
+            s.y = height + 15;
           }
+          s.cx = width * s.xRatio + Math.sin(frameCount * s.swaySpeed + s.phase) * s.swayAmp;
+          s.cy = s.y;
+        }
 
-          const x = width * s.xRatio + Math.sin(frameCount * s.swaySpeed + s.phase) * s.swayAmp;
-          const wave = 0.5 + 0.5 * Math.sin(frameCount * 0.035 + s.phase);
-          const alpha = 0.24 + wave * 0.54;
-          const scale = 0.82 + wave * 0.28;
+        // 2. Draw Delicate Architectural Constellation Lines Connecting Nearby Stars
+        const maxDist = Math.min(135, width * 0.95);
+        ctx.save();
+        ctx.lineWidth = 1.1;
+        for (let i = 0; i < stars.length; i++) {
+          for (let j = i + 1; j < stars.length; j++) {
+            const dx = stars[i].cx - stars[j].cx;
+            const dy = stars[i].cy - stars[j].cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < maxDist) {
+              const lineAlpha = (1 - dist / maxDist) * 0.24;
+              ctx.strokeStyle = `rgba(37, 99, 235, ${lineAlpha.toFixed(3)})`;
+              ctx.beginPath();
+              ctx.moveTo(stars[i].cx, stars[i].cy);
+              ctx.lineTo(stars[j].cx, stars[j].cy);
+              ctx.stroke();
+            }
+          }
+        }
+        ctx.restore();
+
+        // 3. Draw Graceful Shooting-Star Light Trails
+        for (let k = 0; k < shootingStars.length; k++) {
+          const st = shootingStars[k];
+          st.progress += st.speed;
+          if (st.progress >= 1) {
+            st.progress = 0;
+            st.slot = 0.18 + Math.random() * 0.68;
+          }
+          const p = st.progress;
+          const fade = p < 0.2 ? p / 0.2 : p > 0.8 ? (1 - p) / 0.2 : 1;
+          const headX = width * (st.dir > 0 ? 0.2 + p * 0.6 : 0.8 - p * 0.6);
+          const headY = height * st.slot - p * 110;
+          const tailX = headX - st.dir * 38;
+          const tailY = headY + 46;
+
+          ctx.save();
+          const grad = ctx.createLinearGradient(headX, headY, tailX, tailY);
+          grad.addColorStop(0, `rgba(2, 132, 199, ${(fade * 0.65).toFixed(3)})`);
+          grad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 2;
+          ctx.lineCap = 'round';
+          ctx.beginPath();
+          ctx.moveTo(headX, headY);
+          ctx.lineTo(tailX, tailY);
+          ctx.stroke();
+          ctx.restore();
+
+          drawSculptedNorthStar(ctx, headX, headY, 6.5, frameCount * 0.02, '#0284c7', fade * 0.88);
+        }
+
+        // 4. Draw Sculpted Star Nodes (Zero Circles!)
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          const wave = 0.5 + 0.5 * Math.sin(frameCount * 0.038 + s.phase);
+          const alpha = 0.38 + wave * 0.54;
+          const scale = 0.85 + wave * 0.26;
 
           if (s.isFivePoint) {
-            drawFivePointStar(ctx, x, s.y, s.size * 0.82 * scale, s.rot, s.color, alpha);
+            drawFivePointStar(ctx, s.cx, s.cy, s.size * 0.84 * scale, s.rot, s.color, alpha);
           } else {
-            drawSculptedNorthStar(ctx, x, s.y, s.size * scale, s.rot * 0.4, s.color, alpha);
+            drawSculptedNorthStar(ctx, s.cx, s.cy, s.size * scale, s.rot * 0.35, s.color, alpha);
           }
         }
       }
@@ -1151,7 +1242,7 @@
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReduced) {
       function loop() {
-        if (!document.hidden && window.innerWidth > 1280) {
+        if (!document.hidden && window.innerWidth > 1260) {
           leftStage.step();
           rightStage.step();
         }
