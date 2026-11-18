@@ -986,8 +986,7 @@
         ['link[rel="alternate"]', 'href', pageUrl]
       ];
       updates.forEach(function(u) {
-        var el = document.querySelector(u[0]);
-        if (el && u[2]) el.setAttribute(u[1], u[2]);
+        document.querySelectorAll(u[0]).forEach(function(el) { if (u[2]) el.setAttribute(u[1], u[2]); });
       });
     })();
 

@@ -91,7 +91,7 @@ window.UTTKARSH_DATA = {
       "keyFeatures": [
           {
               "title": "English-Medium Education",
-              "text": "Academic learning for students from Standards 5 to 10."
+              "text": "Academic learning for students from Nursery to Grade X."
           },
           {
               "title": "Holistic Development",
@@ -262,7 +262,7 @@ window.UTTKARSH_DATA = {
     "entranceImage": "assets/images/canva/MAHZLGqgk08.jpg",
     "bannerImage": "assets/images/canva/MAHXICM7iYE.jpg",
     "teachersTitle": "Message From Our Teachers",
-    "teachersMessage": "“At Uttkarsh English High School, every classroom is a safe harbour of curiosity, kindness, and high expectations. From holding a child’s hand as they trace their first letters in Nursery and Kindergarten to guiding our tenth-graders toward 100% SSC success, our teachers mentor the whole child. Through science experiments, art, music, leadership circles, and sports, we strive to ensure that every learner discovers their voice, respects others equally, and steps into tomorrow with knowledge and integrity.”",
+    "teachersMessage": "“At Uttkarsh English High School, every classroom is a safe harbour of curiosity, kindness, and high expectations. From holding a child’s hand as they trace their first letters in Nursery, Jr. KG, and Sr. KG to guiding our tenth-graders toward 100% SSC success, our teachers mentor the whole child. Through science experiments, art, music, leadership circles, and sports, we strive to ensure that every learner discovers their voice, respects others equally, and steps into tomorrow with knowledge and integrity.”",
     "teachersSignature": "— The Dedicated Teaching Faculty, Uttkarsh English High School",
     "sahilTitle": "Sahil Sir, Coordinator",
     "sahilParagraphs": [
@@ -579,7 +579,7 @@ window.UTTKARSH_DATA = {
         {
           "src": "assets/images/canva/MAGtgx2KtVY.jpg",
           "rot": 2.0,
-          "caption": "Kindergarten Storytelling"
+          "caption": "Pre-Primary Storytelling"
         },
         {
           "src": "assets/images/canva/MAGwD1Cxr0g.jpg",
@@ -614,7 +614,7 @@ window.UTTKARSH_DATA = {
         {
           "src": "assets/images/canva/MAGbbMfmIM4.jpg",
           "rot": 2.1,
-          "caption": "Kindergarten Smiles"
+          "caption": "Pre-Primary Smiles"
         },
         {
           "src": "assets/images/canva/MAGRZB8zq_Q.jpg",
