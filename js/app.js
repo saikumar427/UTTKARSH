@@ -195,7 +195,7 @@
         <figure
           class="about-media-card"
           data-lightbox="${esc(a.entranceImage)}"
-          data-caption="Uttkarsh English High School & Little World Kindergarten — Consistent 100% SSC Result"
+          data-caption="Uttkarsh English High School — Consistent 100% SSC Result"
         >
           <img
             src="${esc(a.entranceImage)}"
@@ -406,7 +406,7 @@
 
       <section class="arch-section-card arch-section-tinted" aria-label="Pre-Primary Section Gallery">
         ${renderSectionHeader(
-          'LITTLE WORLD KINDERGARTEN',
+          'PRE-PRIMARY SECTION',
           ins.prePrimary.banner,
           'Joyful early-childhood discovery, storytelling, creative play, and Sr. KG graduation milestones.'
         )}

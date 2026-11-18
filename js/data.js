@@ -2,7 +2,7 @@
 window.UTTKARSH_DATA = {
   "school": {
     "name": "Uttkarsh English High School",
-    "subName": "Little World Kindergarten (Pre-Primary)",
+    "subName": "Pre-Primary to Secondary (Nursery to Grade X)",
     "tagline": "Education For All",
     "established": "2006",
     "recognition": "Govt. Recognised (Maharashtra State Board)",
@@ -212,10 +212,10 @@ window.UTTKARSH_DATA = {
         "badge": "100% SSC Excellence"
       },
       {
-        "quote": "From Little World Kindergarten to Primary school, my son wakes up excited for class every single morning! The digital smartboards, Rainbow Week, and Graduation Day create unforgettable memories.",
+        "quote": "From pre-primary to primary school, my son wakes up excited for class every single morning! The digital smartboards, Rainbow Week, and Graduation Day create unforgettable memories.",
         "author": "Parent of Sr. KG Graduate",
         "role": "Pre-Primary & Primary Parent",
-        "badge": "Little World Kindergarten"
+        "badge": "Pre-Primary Section"
       },
       {
         "quote": "Building solar system models for the Science Fair, coding in the Computer Lab, and learning robotics in the Natkhat STEM Lab taught us how science works in the real world—not just in textbooks.",
@@ -262,7 +262,7 @@ window.UTTKARSH_DATA = {
     "entranceImage": "assets/images/canva/MAHZLGqgk08.jpg",
     "bannerImage": "assets/images/canva/MAHXICM7iYE.jpg",
     "teachersTitle": "Message From Our Teachers",
-    "teachersMessage": "“At Uttkarsh English High School, every classroom is a safe harbour of curiosity, kindness, and high expectations. From holding a child’s hand as they trace their first letters in Little World Kindergarten to guiding our tenth-graders toward 100% SSC success, our teachers mentor the whole child. Through science experiments, art, music, leadership circles, and sports, we strive to ensure that every learner discovers their voice, respects others equally, and steps into tomorrow with knowledge and integrity.”",
+    "teachersMessage": "“At Uttkarsh English High School, every classroom is a safe harbour of curiosity, kindness, and high expectations. From holding a child’s hand as they trace their first letters in Nursery and Kindergarten to guiding our tenth-graders toward 100% SSC success, our teachers mentor the whole child. Through science experiments, art, music, leadership circles, and sports, we strive to ensure that every learner discovers their voice, respects others equally, and steps into tomorrow with knowledge and integrity.”",
     "teachersSignature": "— The Dedicated Teaching Faculty, Uttkarsh English High School",
     "sahilTitle": "Sahil Sir, Coordinator",
     "sahilParagraphs": [
@@ -467,7 +467,7 @@ window.UTTKARSH_DATA = {
         "photos": [
           {
             "src": "assets/images/albums/graduation_01.jpg",
-            "caption": "Graduating Class of Little World Kindergarten"
+            "caption": "Graduating Class of Sr. KG (Pre-Primary)"
           },
           {
             "src": "assets/images/albums/graduation_02.jpg",
@@ -539,7 +539,7 @@ window.UTTKARSH_DATA = {
         {
           "src": "assets/images/canva/MAGtg6_ye98.jpg",
           "rot": -2.2,
-          "caption": "Little World Kindergarten Joy"
+          "caption": "Pre-Primary Classroom Joy"
         },
         {
           "src": "assets/images/canva/MAGtGvMO_Ns.jpg",

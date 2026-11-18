@@ -1,6 +1,6 @@
-# Uttkarsh English High School & Little World Kindergarten — Official Website
+# Uttkarsh English High School — Official Website
 
-Official, high-performance, mobile-responsive static website for **Uttkarsh English High School & Little World Kindergarten** (*"Education For All"*, Est. 2006, Govt. Recognised, Gate No. 7, Malwani, Malad West, Mumbai – 400095).
+Official, high-performance, mobile-responsive static website for **Uttkarsh English High School** (*"Education For All"*, Est. 2006, Govt. Recognised, Gate No. 7, Malwani, Malad West, Mumbai – 400095).
 
 ## Quick Preview
 
